@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>
+        REVENDO CSS E HTML
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="content">
+            <div class="logo fl-left">
+                <a href="#">
+                    <img src="images/logo.png" alt="revendo front-end">
+                </a>
+            </div>
+
+            <a href="#" class="nav-toggle fl-right">
+                <i class="fas fa-bars"></i> MENU
+            </a>
+
+            <!-- <a href="#" class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </a>
+
+                <a href="#" class="nav-toggle">
+                    <i class="fas fa-bars"></i>
+                </a> -->
+
+
+            <nav class="nav active">
+                <p class="text-right">
+                    <span class="nav-close">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </p>
+                <ul>
+                    <li>
+                        <a href="#">Restaurantes</a>
+                    </li>
+                    <li>
+                        <a href="#">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#">Fale Conosco</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- END HEADER -->
+
+    <!-- BUSCA E ESTATITICAS -->
+    <section class="section">
+        <div class="search-box bg-fixed">
+            <header>
+                <h1>
+                    Comer é o melhor remédio!
+                </h1>
+                <p class="tagline">
+                    Come memo! =()
+                </p>
+            </header>
+
+            <form class="formSearch" method="POST" action="">
+                <input type="search" name="busca" id="busca" placeholder="Buscar...">
+                <button type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="estatisticas">
+            <div class="estatisticas-item">
+                <span>0</span>
+                <p>Restaurantes</p>
+            </div>
+
+            <div class="estatisticas-item">
+                <span>0</span>
+                <p>Acessos</p>
+            </div>
+
+            <div class="estatisticas-item">
+                <span>0</span>
+                <p>Outra coisa</p>
+            </div>
+        </div>
+    </section>
+    <!-- FIM DE BUSCA E ESTATISTICA -->
+
+    <!-- Restaurantes -->
+    <section class="section">
+        <div class="content">
+            <header class="section-header">
+                <h1>Escolha o que te faca feliz!</h1>
+                <p>Aqui voce encontra os melhores lugares para sair de casa e comer.</p>
+            </header>
+            <div class="row">
+                <div class="restaurantes-col">
+
+                    <!-- no CSS, estilizar as divs/classes/box, de acordo com a hierarquia nela criada, seguindo a lógica aqui, primeiro box, box-name, etc.. -->
+
+                    <div class="box">
+
+                        <!-- seguindo uma `norma` de nomenclatura, todas as clases que vieram dentro da classe box, e pertencerem à ela, deve iniciar 
+                                com o nome da classe pai, logo: "box-exemplo", como abaixo-->
+
+                        <div class="box-name">
+                            Lanches
+                        </div>
+
+                        <div class="box-cover">
+                            <img src="images/destino-1.jpg" alt="">
+                        </div>
+
+                        <div class="box-detalhes">
+                            <div class="box-detalhes-info">
+                                <h2>Lanche 1</h2>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="restaurantes-col">
+                    <div class="box">
+                        <div class="box-name">
+                            Lanches
+                        </div>
+                        <div class="box-cover">
+                            <img src="images/destino-2.jpg" alt="">
+                        </div>
+                        <div class="box-detalhes">
+                            <div class="box-detalhes-info">
+                                <h2>Lanche 1</h2>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurantes-col">
+                    <div class="box">
+                        <div class="box-name">
+                            Lanches
+                        </div>
+                        <div class="box-cover">
+                            <img src="images/destino-3.jpg" alt="">
+                        </div>
+                        <div class="box-detalhes">
+                            <div class="box-detalhes-info">
+                                <h2>Lanche 1</h2>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurantes-col">
+                    <div class="box">
+                        <div class="box-name">
+                            Lanches
+                        </div>
+                        <div class="box-cover">
+                            <img src="images/destino-4.jpg" alt="">
+                        </div>
+                        <div class="box-detalhes">
+                            <div class="box-detalhes-info">
+                                <h2>Lanche 1</h2>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="restaurantes-col">
+                    <div class="box">
+                        <div class="box-name">
+                            Lanches
+                        </div>
+                        <div class="box-cover">
+                            <img src="images/destino-5.jpg" alt="">
+                        </div>
+                        <div class="box-detalhes">
+                            <div class="box-detalhes-info">
+                                <h2>Lanche 1</h2>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- fimRestaurantes -->
+
+    <!-- carregar mais -->
+    <div class="row">
+        <div class="content  text-center">
+            <button class="load-more">
+                Carregar Mais
+            </button>
+        </div>
+    </div>
+    <!-- fim carregar mais -->
+
+    <!-- start PARALLAX -->
+    <div class="parallax bg-fixed">
+        <div class="content">
+            <h1>Encontrou seu restaurante preferido?</h1>
+            <p>Agora conheca um pouco mais sobre ele.</p>
+            <button>Saiba Mais</button>
+        </div>
+    </div>
+    <!-- end PARALLAX -->
+
+    <!-- start DESTAQUES -->
+    <section class="section">
+        <div class="content">
+            <header class="section-header">
+                <h1>Destaques</h1>
+                <p>aaaaaaaaaaa</p>
+            </header>
+
+            <div class="row">
+                <div class="destaques-col">
+                    <div class="box">
+                        <div class="box-name">
+                            Lanches
+                        </div>
+                        <div class="box-cover">
+                            <img src="images/destaque-1.jpg" alt="">
+                        </div>
+                        <div class="box-detalhes">
+                            <div class="box-detalhes-info">
+                                <h2>Lanche 1</h2>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destaques-col">
+                    <div class="box">
+                        <div class="box-name">
+                            Lanches
+                        </div>
+                        <div class="box-cover">
+                            <img src="images/destaque-2.jpg" alt="">
+                        </div>
+                        <div class="box-detalhes">
+                            <div class="box-detalhes-info">
+                                <h2>Lanche 1</h2>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destaques-col">
+                    <div class="box">
+                        <div class="box-name">
+                            Lanches
+                        </div>
+                        <div class="box-cover">
+                            <img src="images/destaque-3.jpg" alt="">
+                        </div>
+                        <div class="box-detalhes">
+                            <div class="box-detalhes-info">
+                                <h2>Lanche 1</h2>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="destaques-col">
+                    <div class="box">
+                        <div class="box-name">
+                            Lanches
+                        </div>
+                        <div class="box-cover">
+                            <img src="images/destaque-4.jpg" alt="">
+                        </div>
+                        <div class="box-detalhes">
+                            <div class="box-detalhes-info">
+                                <h2>Lanche 1</h2>
+                                <p>Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- carregar mais -->
+            <div class="row">
+                <div class="content  text-center">
+                    <button class="load-more">
+                        Carregar Mais
+                    </button>
+                </div>
+            </div>
+            <!-- fim carregar mais -->
+
+        </div>
+    </section>
+    <!-- end DESTAQUES -->
+
+    <!-- start PROGRAMADORES -->
+    <section class="section programadores bg-fixed">
+        <div class="content">
+            <header class="section-header">
+                <h1>Programadores</h1>
+                <p>TESDEL;K ALKSAJF ASILURUALLLDIAUIR AE KAEIJH APIAOPSI</p>
+            </header>
+
+            <article class="programadores-article">
+                <h1>Nunc aalsfhnas  ALJDASLKDA lsdkf;asklf auoisghfiua aweuashe </h1>
+                <span class="image">
+                    <img src="images/testemunha-01.jpg"/>
+                </span>
+                <p>
+                    <span class="name">
+                        Jorelma
+                    </span>
+
+                    <span>
+                        Programador
+                    </span>
+                </p>
+            </article>
+
+            <article class="programadores-article">
+                <h1>Nunc aalsfhnas  ALJDASLKDA lsdkf;asklf auoisghfiua aweuashe </h1>
+                <span class="image">
+                    <img src="images/testemunha-02.jpg"/>
+                </span>
+                <p>
+                    <span class="name">
+                        Jorelma
+                    </span>
+
+                    <span>
+                        Programador
+                    </span>
+                </p>
+            </article>
+
+            <article class="programadores-article">
+                <h1>Nunc aalsfhnas  ALJDASLKDA lsdkf;asklf auoisghfiua aweuashe </h1>
+                <span class="image">
+                    <img src="images/testemunha-03.jpg"/>
+                </span>
+                <p>
+                    <span class="name">
+                        Jorelma
+                    </span>
+
+                    <span>
+                        Programador
+                    </span>
+                </p>
+            </article>
+
+
+        </div>
+    </section>   
+     <!-- end PROGRAMADORES  -->
+
+     <!-- start CABECALHO -->
+        <footer class="footer">
+            <div class="content">
+                <div class="footer-col">
+                    <h1>
+                        Sobre
+                    </h1>
+                    <p style="text-align:justify;">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h1>
+                        Mais
+                    </h1>
+                    <p>
+                        <ul class="footer-col-mais">
+                            <li>
+                                <a href="">Dolor pulvinar sed etiam.</a>
+                            </li>
+                            <li>
+                                <a href="">Dolor pulvinar sed etiam.</a>
+                            </li>
+                            <li>
+                                <a href="">Dolor pulvinar sed etiam.</a>
+                            </li>
+                            <li>
+                                <a href="">Dolor pulvinar sed etiam.</a>
+                            </li>
+                        </ul>   
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h1>
+                        Contato
+                    </h1>
+                    <p>
+                        <ul class="footer-col-contato">
+                            <li>
+                                <i class="fab fa-twitter"></i>
+                                <a href="">Twitter</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-facebook-f"></i>
+                                <a href="">Facebook</a>
+                            </li>
+                            <li>
+                                <i class="fab fa-instagram"></i>    
+                                <a href="">Instagram</a>
+                            </li>
+                        </ul>   
+                    </p>
+                </div>
+                
+                <div class="row text-center footer-autorais">
+                    Todos os direitos reservados.
+                </div>
+            </div>
+        </footer>
+     <!-- start CABECALHO -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,646 @@
+/* Quando colocamos duas classes por exemplo ".header .logo{text-align: center;}" isso quer dizer que estamos passando o estilo para a classe logo dentro da clase header.
+Também pode funcionar sem, mas é questão de programacão. */
+
+/* RESETANDO ALGUMAS COISAS 
+------------------------------------------------------------------------------------------------------------*/
+*, *::before, *::after{margin: 0; padding: 0; box-sizing: border-box; -webkit-box-sizing: border-box;}
+
+body{font-family: 'Open Sans', sans-serif; font-size: inherit;}
+
+input, select, iframe, button{border: none; font-family: 'Open Sans', sans-serif;}
+
+h1, h2, h3{margin: 0; padding: 0;}
+
+ol, ul{list-style: none;}
+
+a {text-decoration: none; color: inherit; transition: all .4s ease-in-out;}
+a:hover{color: #f9014d;}
+
+img{max-width: 100%; border: none;}
+
+
+/* GERAIS
+------------------------------------------------------------------------------------------------------------*/
+.section{
+    float: left;
+    width: 100%;
+}
+.section:not(:first-of-type){
+    margin-top:60px;
+}
+.section-header{
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.section-header h1{
+     font-size: 30px;
+     font-weight: normal;
+}
+
+.content{
+    max-width: 960px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.row{
+    float: left;
+    width: 100%;
+}
+
+.load-more{
+    background: none;
+    font-size: 17px;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    cursor: pointer;
+    /* colocando a transicao aqui, ele funciona o tempo todo, nao só quando passa o mouse, como quando tira tbm. */
+    transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+}
+.load-more:hover{
+    color: #a70606;
+    border: 1px solid #a70606;
+}
+
+/* HEADER
+------------------------------------------------------------------------------------------------------------*/
+.header{
+    position: fixed;
+    width: 100%;
+    padding-top: 30px;
+    z-index: 6;
+    transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+}
+
+.header .logo img{
+    max-width: 150px;
+}
+
+.header.fixed{
+    background: #2c3e50;
+    padding: 10px 0 5px 0;
+}
+
+/* BUSCA E ESTATISTICAS
+------------------------------------------------------------------------------------------------------------*/
+.search-box{
+    text-align: center;
+    color: #fff;
+    padding: 100px 0;
+    background-image: url(../images/bg-search.jpg);
+}
+.search-box h1{
+    font-size: 37px;
+    font-weight: bold;
+}
+.search-box .tagline{
+    font-size: 26xp;
+
+}
+.search-box form{
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    max-width: 500px;
+    margin-top: 40px;
+}
+.search-box form input[type="search"]{
+    width: 100%;
+    height: 50px;
+    font-size: inherit;
+    /* inherit é pra pegar a fonte já do tamanho do navegador */
+    color: #2c3e50;
+    padding: 0 70px 0 10px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+}
+.search-box form button{
+    position: absolute;
+    /* position absolute pra ficar um objeto flutuante na tela */
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    color: #fff;
+    top: 0;
+    right: 0;
+    background-color: #a70606;
+    cursor: pointer;
+    /* para deixar apenas um lado do botão com border-radius */
+    border-top-right-radius: 6px;
+    -webkit-border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    -webkit-border-bottom-right-radius: 6px;
+}
+
+
+/* ESTATISTICAS
+------------------------------------------------------------------------------------------------------------*/
+.estatisticas{
+    background: #fff;
+    max-width: 960px;
+    width: 90%;
+    /* deixar em 90% para n ocupar toda a tela do mobile */
+    padding: 30px 0;
+    margin: -40px auto 0 auto; 
+    /* vai centralizar a estatistica */
+    text-align: center;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    /* isso pode ser usado por exemplo pra definir a direcao da visao, da luz, se deixar os primeiros valores em 0, ficara centralizado, 
+    como se a sombra fosse de uma luz em cima do objeto, se mudar os valores, da pra simular como se a iluminacao estivesse vindo de outro lugar, 
+    assim, a sombra toma uma direcao diferente */
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .5 );
+    -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .5 );
+    /* primeiro valor do box-shadow: off-set-x;
+       segundo valor: off-set-y;
+       terceiro valor: blue-radius;
+       quarto valor: speed-radius; 
+       por último: a cor; */
+
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    /* align-itens é uma subpropriedade da caixa */
+}
+.estatisticas-item span{
+    font-size: 33px;
+    font-weight: bold;
+}
+.estatisticas-item p{
+    font-size: 20px;
+}
+
+/* RESTAURANTES BOX'S
+------------------------------------------------------------------------------------------------------------*/
+.box{
+    display: block;
+    position: relative;
+    /* o comando abaixo serve para a imagem "acompanhar" o box, entenda + em (https://www.w3schools.com/cssreF/pr_pos_overflow.asp) */
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.box-name{
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 2;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    color: #fff;
+    background: #f9014d;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.box-cover{
+    /* a imagem não estava sendo apresentada inteira, a parte de baixo dela, era como se ficasse um padding do box, uma área "bloqueada",
+    sendo assim, com esses comandos, esse problema é resolvido. */
+
+    /* 1em = 16px */
+    font-size: 0;
+    line-height: 1em;
+}
+
+.box-cover img{
+    width: 100%;
+
+    /* o comando abaixo, faz com que a imagem fique um pouco maior que o normal, dentro do box */
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+}
+
+/* BOX HOVER 
+------------------------------------------------------------------------------------------------------------*/
+/* abaixo faremos a imagem voltar ao seu tamanho normal dentro do box, resultando na animacao */
+.box:hover .box-cover img{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+}
+
+.box-detalhes{
+    position: absolute;
+    width: 100%;
+    left: 0;
+   bottom: 0;
+   padding: 15px;
+   color:#fff;
+   font-size: 15px;
+}
+
+.box-detalhes::before{
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: -20px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.8;
+    
+    /* aqui, as configuracoes ficam em hidden, pois é pra mostrar só quando passar o mouse por cima, sendo assim, 
+    colocar como visível, no bloco de código de hover do ".box-detalhes::before" */
+    visibility: hidden;
+
+    /* o comando abaixo cria o "degrade" da sombra que fica ABAIXO dos detalhes (por isso o z-index é menor que o do detalhes),
+    o primeiro parametro indica da onde deve comecar o degrade, ou seja, de baixo p/ cima, 
+    o segundo valor é pra deixar transparente a parte mais clara, podendo ser qualquer outra cor,
+    e o terceiro é a cor. */
+    background: linear-gradient(to bottom, transparent, #000);
+
+    transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    transform: scale(0, 50%);
+    -webkit-transform: scale(0, 50%);
+}
+
+.box-detalhes-info{
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    /* para ficar acima da sombra, utilizar o z-index */
+    z-index: 2; 
+    transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+
+    /* translate(0, 50%), o left é 0 e o topo vai descer 50% */
+    transform: translate(0, 50%);
+    -webkit-transform: translate(0, 50%);
+}
+
+/* para não ter que criar dois campos de códigos iguais, utilizamos um agrupamento, como abaixo */
+.box:hover .box-detalhes::before,
+.box:hover .box-detalhes-info{
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+}
+
+.box-detalhes-info h1{
+    font-size: 20px;
+}
+
+/* RESTAURANTE IMG'S 
+------------------------------------------------------------------------------------------------------------*/
+.restaurantes-col{
+    margin-bottom: 20px;
+}
+
+/* DESTAQUES 
+------------------------------------------------------------------------------------------------------------*/
+.destaques-col{
+    margin-bottom: 20px;
+}
+
+
+/* PROGRAMADORES
+------------------------------------------------------------------------------------------------------------*/
+.programadores{
+    padding: 100px 0;
+    background-image: url(../images/bg-testemunhas.jpg);
+}
+.programadores-article{
+    float: left;
+    background: rgba(255, 255, 255, .6);
+    width: 100%;
+    font-size: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+.programadores-article h1{
+    font-size: 16px;
+    font-weight: normal;
+    padding-left: 12px;
+    margin-bottom: 20px;
+    border-left: 8px solid #ccc;
+}
+.programadores-article .image{
+    /* A propriedade de overflow especifica o que deve acontecer se o conteúdo ultrapassar a caixa de um elemento.
+
+       Esta propriedade especifica se é necessário recortar o conteúdo ou adicionar barras de rolagem quando o conteúdo de um elemento é grande demais para caber em uma área especificada.
+
+       Nota: A propriedade de overflow só funciona para elementos de bloco com uma altura especificada. 
+    */
+    overflow: hidden;
+    float: left;
+    margin-right: 10px;
+    width: 83px;
+    height: 83px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+/* aqui vamos atacar só o parágrafo mesmo, pois só há 1 parágrafo em programadores-article, não há necessidade de criar uma classe só pra isso. */
+.programadores-article p{
+    /* aqui utilizamos elementos "novos" do css3 p não ter que ficar usando padding e margin para quebrar o texto, o que não daria totalmente certo tbm. 
+       Desse modo, o parágrafo fica respansivo, e não fica quebrando linha causando bugs. */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 83px;
+}
+.programadores-article .name{
+    color: #f9014d;
+    font-weight: bold;
+}
+
+/* RODAPÉ
+------------------------------------------------------------------------------------------------------------*/
+.footer{
+    float: left;
+    width: 100%;
+    color: #fff;
+    background: #181818;
+    padding: 30px 0;
+}
+.footer-col{
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+}
+.footer-col h1{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.footer-col-mais li{
+    padding: 10px 0;
+}
+.footer-col-mais li:not(:last-of-type){
+    border-bottom: 1px solid #fff;
+}
+.footer-col-contato li{
+    padding: 10px 0;
+}
+.footer-col-contato li .fab{
+    font-size: 20px;
+    background: #000;
+    margin-right: 5px;
+    height: 30px;
+    /* p centralizar a img, line-height */
+    line-height: 30px;
+    width: 30px;
+    text-align: center;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+/* DIREITOS AUTORAIS 
+------------------------------------------------------------------------------------------------------------*/
+.footer-autorais{
+    padding-top: 20px;
+    border-top: 1px solid #fff;
+    color: #ccc;
+}
+
+/* BREAKPOINTS MÁXIMOS
+------------------------------------------------------------------------------------------------------------*/
+@media(max-width: 767.9px){
+    /* Enquanto a resolucao não ultrapassar o máximo width, ele ira executar: */
+
+    /* MENU */
+    .nav-toggle{
+        color: #fff;
+        font-size: 22px;
+    }
+    .nav-close{
+        font-size: 22px;        
+    }
+
+    /* Quando quisermos atacar uma div que tem duas classes juntas e voce quer referenciar uma clsse em especifica,
+    coloque a classe especifica junta à outra, sem espaco, por exemplo, atacar a classe active que está junta com a classe nav,
+    fica desta forma (.header .nav.active), como abaixo. Logicamente, quando contem espaco, é uma classe "filha" dentro de outra "pai" */
+    .header .nav.active{
+        right: 0;
+    }
+    .header .nav{
+        background: #fff;
+        width: 250px;
+        height: 100%;
+        position: fixed;
+        padding: 15px;
+        /* colocar um right de 100% para o menu sair da tela */
+        right: -100%;
+        top: 0;
+        /* z-index indica o elemento mais próximo da tela, como se fosse um sistema 3D, lembrando que o maior número definido é o que vai ficar a frente, 
+        e o menor número, atrás dos outros elementos */
+        z-index: 10;
+        transition: right .7s ease-in-out;
+    }
+
+    .header .nav ul li{
+        font-size: 20px;
+        padding: 15px 5px;
+        border-bottom: 1px solid #ccc;
+    }
+    
+    .estatisticas{
+        flex-direction: column;
+        /* virar uma coluna */
+    }
+    .estatisticas-item{
+        min-width: 90%;
+    }
+    /* o código abaixo `estatisticas-item:not(:last-of-type)` quer dizer para executar os estilos abaixos, em todos elementos MENOS(:not) no ÚLTIMO(:last-of-type)  */
+    /* aqui ele vai colocar uma borda abaixo de cada coluna, menos da ultima  */
+    .estatisticas-item:not(:last-of-type){
+        /* margin-bottom: 15px; */
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ccc; 
+    }
+}
+
+
+/* BREAKPOINTS MÍNIMO
+------------------------------------------------------------------------------------------------------------*/
+@media(min-width: 768px){
+    /* MENU */
+    .nav-toggle, .nav-close{
+        display: none;
+    }
+    .header .nav{
+        float: right;
+        /* descer 20px da marcacao inicial do topo. */
+        margin-top: 13px;
+    }
+    .header .nav ul li{
+        display: inline-block;
+        margin-left: 20px;
+    }
+    .header .nav ul li a{
+        color: #fff;
+    }
+    .header .nav ul li a:hover{
+        color: #f9014d;
+    }
+
+    .search-box{
+        padding:200px 0px;
+    }
+    .estatisticas{
+        margin-top: -65px;
+    }
+    .estatisticas-item{
+        text-align: center;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+    /* aqui ele vai colocar uma borda a direita de cada coluna, menos a ultima */
+    .estatisticas-item:not(:last-of-type){
+        border-right: 1px solid #ccc;
+    }
+
+    /* RESTAURANTES-COL 
+    ------------------------------------------------------------------------------------------------------------*/
+    .restaurantes-col{
+        width: 49%;
+        margin-right: 2%;
+        margin-bottom: 2%;
+        float: left;
+    }
+    /* O parametro EVEN, pega os pares, a partir do segundo elemento.
+       O parametro ODD pega os ímpares, partir do primeiro elemento.  */
+    .restaurantes-col:nth-child(odd){
+        /* queremos que a cada linha que ele pule, ele zere o margin-rigt */
+        margin-right: 0;
+    }
+
+    /* first-child, obviamente ataca a primeira coluna. */
+    .restaurantes-col:first-child{
+        width: 100%;
+    }
+
+    /* DESTAQUES */
+    .destaques-col{
+        width: 49%;
+        margin-right: 2%;
+        float: left;
+        margin-bottom: 2%;
+    }
+    /* ou seja, de 2 em 2, irá zerar o margin-right */
+    .destaques-col:nth-of-type(2n+0){
+        margin-right: 0;
+    }
+
+    /* PROGRAMADORES */
+    .programadores-article{
+        /* o codigo abaixo, calcula do width total, menos suas margens (right e bottom especificados abaixo) e dividido pelo numero de elementos que existem,
+           para que não precisemos ficar fazendo contas pra saber exatamente quantos px's colocar. O último elemento n tem margin-right 
+           
+           se fosse o caso de ter 4 cards de programadores, teriamos não 8% de margin para retirar do width, e sim 12% e dessa vez dividido por 4 elementos, para que ficasse certo.*/
+        width: calc((100% - 8%) / 3);
+        margin-right: 4%;
+        margin-bottom: 4%;
+    }
+    .programadores-article:last-of-type{
+        margin-right: 0;
+    }
+
+    /* CABECALHO */
+    .footer-col{
+        width: 40%;
+    }
+    /* atancando a segunda coluna, com o codigo :nth-child(2) */
+    .footer-col:nth-child(2){
+        width: 28%;
+        margin-left: 5%;
+    }
+    /* atacando a terceira coluna */
+    .footer-col:nth-child(3){
+        width: 20%;
+        float: right;
+    }
+}
+
+    /* PARALLAX 
+    ------------------------------------------------------------------------------------------------------------*/
+    .parallax{
+        float: left;
+        width: 100%;
+        font-size: 23px;
+        text-align: center;
+        color: #fff;
+        padding: 160px 0;
+        margin: 60px 0 0 0;
+        background-image: url(../images/bg-paralax.jpg);
+    }
+    .parallax h1{
+        font-size: 38px;
+        margin-bottom: 10px;
+    }
+    .parallax button{
+        font-size: 20px;
+        font-weight: bold;
+        color: #fff;
+        background: #f9014d;
+        padding: 10px 15px;
+        margin-top: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        transition: all .4s ease-in-out;
+        -webkit-transition: all .4s ease-in-out;
+    }
+    .parallax button:hover{
+        background: #e92863;
+    }
+
+@media (min-width: 900px){
+    .restaurantes-col:nth-child(odd),
+    .restaurantes-col{
+        width: 32%;
+        margin-right: 2%;
+    }
+    /* A LOGICA DE PROGRAMACAO AQUI E A SEGUINTE: conte a partir da terceira "imagem" pule duas colunas e zere a margem da terceira, ou seja pra zerar sempre a margin da 3 coluna,
+    adicionamos o seguinte parametro. (o número depois do + é onde vai comecar a aplicar as config do estilo, ou seja, a partir da 2 coluna, para atingir a 3 coluna,
+    como no nosso caso). */
+    .restaurantes-col:nth-of-type(3n+2){
+        margin-right: 0;
+    }
+    .restaurantes-col:first-child{
+        width: 66%;
+    }
+}
+
+/* CLASSES AUXILIARES
+------------------------------------------------------------------------------------------------------------*/
+
+/* BACKGROUND FIXO */
+.bg-fixed{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* TEXT ALIGN */
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.text-right{
+    text-align: right;
+}
+
+/* FLOAT */
+.fl-left{
+    float: left;
+}
+.fl-right{
+    float: right;
+}
